@@ -3,12 +3,12 @@ import { OpinionsContext } from '../store/opinions-context';
 
 export function Opinion({ opinion: { id, title, body, userName, votes } }) {
   const { upvoteOpinion, downvoteOpinion } = useContext(OpinionsContext);
-  function upvoteAction() {
-    upvoteOpinion(id);
+  async function upvoteAction() {
+    await upvoteOpinion(id);
   }
 
-  function downvoteAction() {
-    downvoteOpinion(id);
+  async function downvoteAction() {
+    await downvoteOpinion(id);
   }
   return (
     <article>
